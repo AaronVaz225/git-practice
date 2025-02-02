@@ -10,13 +10,39 @@ class LinkedList {
     this.length = 1;
   }
 
-  append(value) {}
+  //add to end of linked list.
+  append(value) {
+    const newNode = {
+      value: value,
+      next: null,
+    };
 
-  prepend(value) {}
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+  }
 
-  remove(value) {}
+  //add value to the front of list
+  prepend(value) {
+    const newNode = {
+      value: value,
+      next: null,
+    };
+
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+  }
+
+  //Iterate through linked list to remove the value;
+  remove(value) {
+    const index = traverse(value);
+  }
 
   insert(index, value) {}
+
+  //Traverse helper function
+  traverse(value) {}
 
   printList() {}
 }
