@@ -37,14 +37,35 @@ class LinkedList {
   //Iterate through linked list to remove the value;
   remove(value) {
     const index = traverse(value);
+    //#TODO
   }
 
-  insert(index, value) {}
+  insert(index, value) {
+    if (index >= this.length) {
+      return this.append(value);
+    }
+
+    const newNode = {
+      value: value,
+      next: null,
+    }; //#TODO
+  }
 
   //Traverse helper function
-  traverse(value) {}
+  traverse(index) {
+    //#TODO
+  }
 
-  printList() {}
+  printList() {
+    let travelNode = this.head;
+    let valuesArray = [];
+    while (travelNode !== null) {
+      valuesArray.push(travelNode.value);
+      travelNode = travelNode.next;
+    }
+    console.log(valuesArray);
+    return valuesArray;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
